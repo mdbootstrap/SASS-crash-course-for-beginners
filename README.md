@@ -31,7 +31,7 @@ Download and install one of the following browser:
 * [Opera](https://www.opera.com/download)
   
 #### 1.3 Lesson files  
-Download lesson files from [here](https://github.com/mdbootstrap/AJAX-tutorial-using-JS-and-jQuery-for-beginners/archive/master.zip) and unzip on your computer or[clone](https://github.com/mdbootstrap/AJAX-tutorial-using-JS-and-jQuery-for-beginners) repository using git .
+Download lesson files from [here](https://github.com/mdbootstrap/SASS-crash-course-for-beginners/archive/master.zip) and unzip on your computer or[clone](https://github.com/mdbootstrap/SASS-crash-course-for-beginners) repository using git .
   
 You will see the following files structre:
 
