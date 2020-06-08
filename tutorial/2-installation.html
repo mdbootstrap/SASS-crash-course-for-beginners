@@ -1,0 +1,100 @@
+<style>
+    img {
+        max-width: 99%;
+        max-height: 99%;    
+    }
+</style>
+
+
+<h1>What is SASS?</h1>
+
+<p>SASS is a supserset of CSS, it's called a CSS with super powers. It allows us to do a lot of things that we normally would not be able to do in CSS like:</p>
+
+<ul>
+  <li>nestings</li>
+  <li>imports</li>
+  <li>loops</li>
+  <li>functions</li>
+</ul>
+
+<p>And many other which I am gonna cover in this tutorial. </p>
+
+<p>SASS is one of the must have skills for developers to know. I am sure that once you learn SASS, you're gonna have very hard time writing normal CSS.</p>
+
+<p>So without further ado, let's get started. </p>
+
+
+<h2>Installation </h2>
+
+// Tutorial > TODO desktop installation 
+
+<p>There are few options to install sass, but for today I am gonna show you the easiest one so we won't wast time for installation. </p>
+
+<p>We gonna use Visual Studio Code extension called <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass">Live Sass Compiler</a></p>
+
+<img src="assets/installation.gif" alt="Live Sass Compiler VSC extension installation">
+
+
+<h2>Getting started </h2>
+
+
+<p>In order to start using SASS all we have to do is to create a file with .scss extension: i.e. <code>styles.scss</code></p>
+
+
+<p>So let's create an starting <code>index.html</code> file as well as <code>styles.scss</code> files in our project folder and some style to it i.e.:</p>
+<p>Note: This is a website which we previously crated using CSS only during our <a href="https://github.com/mdbootstrap/HTML-and-CSS-tutorial-for-beginners">HTML&CSS Crash Course</a>  </p>
+
+<p>index.html :</p>
+<pre><code>
+  &lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+  
+  &lt;head&gt;
+      &lt;title&gt;My Website&lt;/title&gt;
+      &lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;styles.css&quot; /&gt;
+  &lt;/head&gt;
+  
+  &lt;body&gt;
+      &lt;div class=&quot;heading&quot;&gt;
+          &lt;h1 class=&quot;title&quot;&gt;MDB Coding&lt;/h1&gt;
+          &lt;p class=&quot;subtitle&quot;&gt;For those who love coding&lt;/p&gt;
+          &lt;a href=&quot;project.html&quot;&gt;
+              &lt;button class=&quot;register&quot;&gt;JOIN NOW&lt;/button&gt;
+          &lt;/a&gt;
+  
+      &lt;/div&gt;
+  &lt;/body&gt;
+  
+  &lt;/html&gt;
+</code></pre>
+
+<p>styles.scss :</p>
+
+<pre><code>
+  p {
+    color: blue;
+}
+</code></pre>
+
+<p>Now when you click on "Watch Sass" icon, it will compile our <code>styles.scss</code> to <code>styles.css</code> file. It will also create a <code>style.css.map</code> file which we will ignore for now. </p>
+
+
+<img src="assets/watch.gif" alt="Watch SASS">
+
+<p>As you can already see, a valid CSS code is also valid SCSS therefore if you are familiar with CSS you should find using SASS very easy.</p>
+
+
+
+<h2>Syntax:</h2>
+
+<p>There are two syntax available while using SASS: </p>
+
+<ul>
+  <li>SASS - using indents and .sass file extension</li>
+  <li>SCSS - using curly brackets (like CSS) and .scss file extension</li>
+</ul>
+
+
+<p>In this tutorial we will be using SCSS syntax as it is more familiar with CSS. </p>
+
+<p>Since we know theory let's put or hands on keyboard and create <a href="3-variables-maps.html">learn about variables</a>.</p>

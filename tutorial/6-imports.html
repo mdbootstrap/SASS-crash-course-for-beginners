@@ -1,0 +1,83 @@
+<h2>Imports</h2>
+
+<p>When it comes to complex project it's difficult to work on a single file. </p>
+
+<p>SASS allows us to easily split our code into multiple sub-files and merge them during compilation time:</p>
+
+
+<p>Let's create new file called <code>_footer.scss</code> and add the following code:</p>
+
+<pre><code>
+    .footer {
+        height: 50px;
+        background-color: white;
+    }
+</code></pre>
+
+
+<p>Within the main <code>styles.scss</code> file add the following import statement:</p>
+
+<pre><code>
+    .footer {
+        height: 20px;
+        background-color: white;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+    }
+</code></pre>
+
+<p>Now when we check our output file (<code>styles.css)</code> you will see that our footer styles has been added so the last thing we have to do is add our footer to the HTML:</p>
+
+<pre><code>
+    &lt;div class=&quot;footer&quot;&gt;Copyrights @MDBootstrap.com&lt;/div&gt;
+</code></pre>
+
+<h2>Variables</h2>
+
+<p>It's a common practice to keep all variables in a separate file, let's move them to _variables.scss file and import in styles.scss</p>
+
+
+
+<h2>Extend</h2>
+
+
+<p>Very often we end up creating classes which are very similar to each other and have only one or two different values. Instead of retyping all parameters (and adjusting all of the in we decide to change some common attribute) we can use @extend option:</p>
+
+<pre><code>
+    .subtitle{
+        @include flexAlign();
+        font-size: 30px;
+    }
+
+    .quote {
+        @extend .subtitle;
+        font-size: 20px;
+    }
+</code></pre>
+
+<p>This will create a class called .quote which will have exactly the same properties as .subtitle class but smaller font-size. </p>
+
+
+
+<h2>Final cleanup</h2>
+
+<p>Finally to make our site look prettier we need to do some final adjustments to our body and link classes. You can find final code in <code>tutorial</code> directory.</p>
+
+
+
+
+
+<p>I also strongly encourage you to:
+    <ul>
+        <li>Give a star to this repository <iframe src="https://ghbtns.com/github-btn.html?user=mdbootstrap&repo=SASS-crash-course-for-beginners&type=watch&count=true&size=large" frameborder="0" scrolling="0" width="170px" height="30px"></iframe></li>
+        <li>Join our <a href="https://www.facebook.com/groups/682245759188413/"> Facebook group find more tutorials and get support</a></li>
+        <li>Subscribe to our <a href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA?sub_confirmation=1">YouTube channel</a>   </li>
+        <li>Check our other <a href="https://mdbootstrap.com/education/">tutorials</a></li>
+    </ul>
+    
+    </p>
+
+

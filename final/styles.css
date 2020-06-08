@@ -1,0 +1,79 @@
+body {
+  background-image: url(https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);
+  background-size: cover;
+  background-blend-mode: screen;
+  background-color: #051f35;
+  font-family: "Courier New", Courier, monospace;
+}
+
+body .heading {
+  text-align: center;
+  width: 600px;
+  height: 400px;
+  margin: auto;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+}
+
+body .heading .title {
+  font-size: 80px;
+  font-weight: normal;
+  margin-bottom: 0px;
+}
+
+body .heading .subtitle, body .heading .quote {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: inherit;
+  font-size: 30px;
+}
+
+body .heading .quote {
+  font-size: 20px;
+}
+
+body .heading a {
+  text-decoration: none;
+}
+
+body .heading .register {
+  color: white;
+  width: 180px;
+  height: 50px;
+  font-weight: bold;
+  margin: 50px auto;
+  display: block;
+  background-color: rgba(0, 0, 0, 0);
+  border: 3px solid white;
+  border-radius: 5px;
+  -webkit-transition: background-color 1000ms, color 1000ms;
+  transition: background-color 1000ms, color 1000ms;
+}
+
+body .heading .register:hover {
+  background-color: white;
+  color: #222222;
+  -webkit-transition: background-color 1000ms, color 1000ms;
+  transition: background-color 1000ms, color 1000ms;
+}
+
+.footer {
+  height: 20px;
+  background-color: white;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+/*# sourceMappingURL=styles.css.map */

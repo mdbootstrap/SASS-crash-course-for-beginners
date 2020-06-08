@@ -1,0 +1,198 @@
+<style>
+    img {
+        max-width: 99%;
+        max-height: 99%;    
+    }
+</style>
+
+<h1>SASS Variables & maps</h1>
+ 
+<h2>Variables</h2>
+
+<p>Let's add some styles to our .heading div. As you can see it's using .heading class name. While selecting elements you should always be as specific as possible to make sure that your styles won't be applied to som other elements.  </p>
+
+<p>In this case we would like to target element having heading class inside our body element. While using SASS this is very intuitive. </p>
+
+
+<p>What we have to do is just nest our target element under the parent one:</p>
+
+<pre><code>
+    body {
+        background-color: map-get($colors, background);
+        font-family: $font-stack;
+        
+        .heading {
+            width: 600px;
+            height: 400px;
+            margin: auto;
+            position:absolute;
+            top: 0px; bottom: 0px; right: 0px; left: 0px;
+        }
+    }
+</code></pre>
+
+<p>Now when you check compiled css file, you will notice that SASS compiler obviously didn't nest .heading declaration inside body, but created correct combinator: </p>
+
+<pre><code>
+    body {
+        background-color: #dddddd;
+        font-family: Courier New;
+      }
+      
+      body .heading {
+        width: 600px;
+        height: 400px;
+        margin: auto;
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        right: 0px;
+        left: 0px;
+      }
+</code></pre>
+
+
+<p>Obviously we can nest selectors even deeper:</p>
+
+<pre><code>
+    body {
+        background-color: color(background);
+        font-family: $font-stack;
+        
+        .heading {
+            width: 600px;
+            height: 400px;
+            margin: auto;
+            position:absolute;
+            top: 0px; bottom: 0px; right: 0px; left: 0px;
+    
+            .title{
+                text-align: center;
+                font-size: 80px;
+                font-weight: normal;
+                margin-bottom: 0px;
+            }
+            
+            .subtitle{
+                text-align: center;
+                font-size: 30px;
+            }
+        }
+    }
+</code></pre>
+
+<h2>Translation</h2>
+
+<p>Let's add remaining styles for our register button:</p>
+
+<pre><code>
+    body {
+        background-color: color(background);
+        font-family: $font-stack;
+    
+        .heading {
+            width: 600px;
+            height: 400px;
+            margin: auto;
+            position:absolute;
+            top: 0px; bottom: 0px; right: 0px; left: 0px;
+    
+            .title{
+                text-align: center;
+                font-size: 80px;
+                font-weight: normal;
+                margin-bottom: 0px;
+            }
+            
+            .subtitle{
+                text-align: center;
+                font-size: 30px;
+            }
+            .register{
+                width:180px;
+                height:50px;
+                font-weight: bold;
+                margin: 50px auto;
+                display: block;
+                background-color: rgba(0,0,0,0);
+                border: 3px solid white;
+                border-radius: 5px;
+            
+                transition: background-color 1000ms, color 1000ms;
+            }
+            
+            .register:hover{
+                background-color: white;
+                color: #222222;
+            
+                transition: background-color 1000ms, color 1000ms;
+            }
+        }
+    }  
+</code></pre>
+
+<p>when you check output css file, you will notice that except for <code>transition</code> property, you will see also a <code> -webkit-transition:</code> with the same values.  </p>
+
+<p>This is because historically <code>transition</code> was vendor specific, so we had to create a vendor specific attributes (i.e. Chrome supported -webkit-transition, while opera required o-transition) </p>
+
+<p>Luckily currently <code>transition</code> is accepted by most of the browser and covers about <a href="https://caniuse.com/#search=transition">85%</a> web users. </p>
+
+
+<h2>&</h2>
+
+<p>Another very useful SASS option which makes our code less verbose is an easier way to define styles for pseudo classes</p>
+
+<p>Instead of repeating the class name: </p>
+
+<pre><code>
+    .register{
+        ...
+    }
+    
+    .register:hover{
+        ...
+    }   
+</code></pre>
+
+<p>We can simply use <code>&:hover</code> syntax:</p>
+
+<pre><code>
+    .register{
+        ... 
+
+        &:hover{
+            ...
+
+        }
+    }
+</code></pre>
+
+
+<p>Final code:</p>
+
+
+<pre><code>
+    .register{
+        width:180px;
+        height:50px;
+        font-weight: bold;
+        margin: 50px auto;
+        display: block;
+        background-color: rgba(0,0,0,0);
+        border: 3px solid white;
+        border-radius: 5px;
+    
+        transition: background-color 1000ms, color 1000ms;
+        &:hover{
+            background-color: white;
+            color: #222222;
+        
+            transition: background-color 1000ms, color 1000ms;
+        }
+    }
+</code></pre>
+
+<p>Note: In case of <i>after/before</i> you will need to <code>::</code> i.e.: <code>&::after</code></p>
+
+<p>Since we know how to do that, let's move to learn how to use <a href="5-functions.html">functions.</a></p>
+

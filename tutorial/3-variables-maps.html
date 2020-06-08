@@ -1,0 +1,95 @@
+<style>
+    img {
+        max-width: 99%;
+        max-height: 99%;    
+    }
+</style>
+
+<h1>SASS Variables & maps</h1>
+ 
+<h2>Variables</h2>
+
+<p>First very useful SASS feature are variables. We can defined them on the top of our file, and re-use in multiple places:</p>
+
+<pre> <code>
+    $mycolor: #1d61aff4;
+
+    body {
+        background-color: $mycolor;
+    }
+</code></pre>
+
+<p>Obviously now CSS also offers us variables (so called custom properties) but taking into account other features which are offered by SASS it's still more convenient to use SASS. I also personally feel that SASS variables are more intuitive than CSS ones.  </p>
+
+<p>As you can imagine, this is very handy tool which allows us to easily update colors in entire page by changing just a single value. </p>
+
+<p>Most of the pages use some theme color and defines default color of </p>
+
+<ul>
+    <li>primary color</li>
+    <li>secondary color</li>
+    <li>background color</li>
+    <li>accent color</li>
+</ul>
+
+<p>I.e. when you check Bootstrap source, you will find .scss files and variables responsible for colors, which you can overwrite:</p>
+
+<pre><code>
+    // Your variable overrides
+    $body-bg: #000;
+    $body-color: #111;
+    
+    // Bootstrap and its default variables
+    @import "../node_modules/bootstrap/scss/bootstrap";
+</code></pre>
+
+<p>Once we save the file, compiler will compile our variables into final css code. As you can see variables are removed from output css file.</p>
+
+<p>Obviously we can use variable for other properties as well: </p>
+
+<pre><code>
+    $mycolor: #1d61aff4;
+    $font-stack: 'Courier New', Courier, monospace;
+    
+    body {
+        background-color: map-get($colors, background);
+        font-family: $font-stack;
+    }
+</code></pre>
+
+<h2>SASS maps</h2>
+
+
+
+<p>Similar to JavaScript objects </p>
+
+<pre><code>
+    $colors: (
+    "primary": #1d61aff4,
+    "accent": #accc20,
+    "background": #dddddd
+);
+</code></pre>
+
+<p>In order to apply them we have to slightly change syntax:</p>
+
+<pre><code>
+    body {
+        background-color: map-get($colors, background);
+    }
+</code></pre>
+
+
+
+<p>Maps are also available in the Bootstrap: </p>
+
+
+<pre><code>
+    $theme-colors: (
+        "primary": #0074d9,
+        "danger": #ff4136
+      );
+</code></pre>
+
+
+<p>Now let's move to another feature - <a href="4-nesting.html">nesting</a></p>

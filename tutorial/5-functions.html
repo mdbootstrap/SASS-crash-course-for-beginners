@@ -1,0 +1,112 @@
+<style>
+    img {
+        max-width: 99%;
+        max-height: 99%;    
+    }
+</style>
+
+<h2>Functions</h2>
+
+
+<p>One of the biggest advantages of SASS are functions, which like in normal programming languages can accept argument and return us values:</p>
+
+<p>Let's define function to replace our map-get with custom function returning color: </p>
+
+<pre><code>
+    @function color($color-name) {
+        @return map-get($colors, $color-name)
+    }
+</code></pre>
+
+<p>and replace current invocation: </p>
+
+
+<pre><code>
+    background-color: map-get($colors, background);
+</code></pre>
+
+<p>with new function call:</p>
+
+
+<pre><code>
+    background-color: color(background);
+</code></pre>
+
+<p>As you can see there is no change in our project so our function works as expected.</p>
+
+<h3>Calculations</h3>
+
+<p>SASS allows us to do a calculation like below:</p>
+
+<pre><code>
+    @function my-calculation-function($some-number, $another-number){
+        @return $some-number + $another-number
+      }
+</code></pre>
+
+
+
+<h2>Mixins</h2>
+
+<p>Often we are using a bunch of properties together like the one below: </p>
+
+
+<pre><code>
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+</code></pre>
+
+<p>We can create so called @mixin</p>
+
+<pre><code>
+    @mixin flexAlign {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</code></pre>
+
+<p>and invoke it using @include:</p>
+
+<pre><code>
+    .subtitle{
+        @include flexAlign();
+        font-size: 30px;
+    }  
+</code></pre>
+
+<h3>@mixins with arguments</h3>
+
+<p>Mixin can also accept arguments:</p>
+
+<pre><code>
+    @mixin flexAlign($background) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $background;
+    }
+    
+</code></pre>
+
+<p>which we can invoke as follows:</p>
+
+<pre><code>
+    .subtitle{
+        @include flexAlign(white);
+        font-size: 30px;
+    }
+</code></pre>
+
+<p>We can also specify a default value after <code>:</code> sign - now we don't have to always pass it to our mixin call:</p>
+
+<pre><code>
+    @mixin flexAlign($background: inherit) 
+</code></pre>
+
+<p>Now let's learn about <a href="6-imports.html">imports</a></p>
+
+
+
